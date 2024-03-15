@@ -1,3 +1,6 @@
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -16,7 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          inter.className,
+          "bg-gradient-to-b from-[#F4F4F4] to-[#E2EAFF]"
+        )}
+      >
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
